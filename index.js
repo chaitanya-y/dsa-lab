@@ -187,3 +187,8 @@ bst.postOrder();
 bst.printLevel(bst.root, 3);
 console.log(bst.min(bst.root));
 console.log(bst.max(bst.root));
+
+
+
+// What does this code return? 
+var Foo = function (a) { this.bar = () => { return a; } var baz = function () { return a; }; }; Foo.prototype = { biz: () => { return this.bar(); } }; var f = new Foo(7); f.bar(); //=> f.baz(); //=> f.biz(); //=>
