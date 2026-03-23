@@ -1,20 +1,20 @@
 
 
 
-function groupAnagrams(anagrams) {
-  const seen = new Map();
+function groupAnagrams(words) {
+  const map = new Map();
 
-  for (const anagram of anagrams) {
-    const sortedAnagram = anagram.split("").sort().join("");
+  for (const word of words) {
+    const key = word.split("").sort().join("");
 
-    if (!seen.has(sortedAnagram)) {
-      seen.set(sortedAnagram, []);
+    if (!map.has(key)) {
+      map.set(key, []);
     }
 
-    seen.get(sortedAnagram).push(anagram);
+    map.get(key).push(word);
   }
 
-  return Array.from(seen.values());
+  return Array.from(map.values());
 }
 
 console.log("Group Anagram result is",groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]))

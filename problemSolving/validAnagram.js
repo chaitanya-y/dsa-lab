@@ -18,12 +18,12 @@ function validAnagram(string1,string2){
     for(let char of string1){
         count[char] = (count[char] || 0) + 1;
     }
-
+console.log(count)
     for(let char of string2){
         if(!count[char]){
             return false
         }
-        count[char]++
+        count[char]
     }
     return true
 }
