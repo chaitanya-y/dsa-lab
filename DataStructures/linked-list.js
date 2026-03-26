@@ -180,6 +180,38 @@ class LinkedList{
   
 }
 
+
+
+// // reverse a linkedList
+// function reverse(){
+//   let prev = null;
+//   let curr = this.head;
+//   while(curr){
+//     let next = curr.next;
+//     curr.next = prev;
+//     prev = curr;
+//     curr = next
+//   }
+//   this.head = prev
+  
+// }
+
+// function recursiveReverse(node){
+//   if(node == null) retur  null
+//   if(node.next == null){
+//     this.head = node;
+//     return node;
+//   }
+
+//   let node1 = recursiveReverse(node.next);
+//   node1.next = node;
+//   node.next = null;
+//   return node;
+  
+// }
+
+
+
 const linkedList = new LinkedList();
 // console.log(linkedList.isEmpty())
 // console.log(linkedList.getSize())
