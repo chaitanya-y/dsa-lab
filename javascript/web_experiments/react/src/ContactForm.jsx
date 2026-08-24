@@ -1,10 +1,13 @@
-function ContactForm() {
+const SUBMIT_URL =
+  'https://questions.greatfrontend.com/api/questions/contact-form';
+
+export default function ContactForm() {
   return (
     <form
       // Ignore the onSubmit prop, it's used by GFE to
       // intercept the form submit event to check your solution.
       onSubmit={submitForm}
-      action="https://questions.greatfrontend.com/api/questions/contact-form"
+      action={SUBMIT_URL}
       method="post">
       <div>
         <label htmlFor="name-input">Name</label>
@@ -26,11 +29,6 @@ function ContactForm() {
     </form>
   );
 }
-
-
-
-const SUBMIT_URL =
-  'https://questions.greatfrontend.com/api/questions/contact-form';
 
 async function submitForm(event) {
   event.preventDefault();
@@ -66,4 +64,3 @@ async function submitForm(event) {
     alert('Error submitting form!');
   }
 }
-

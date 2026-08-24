@@ -1,0 +1,40 @@
+:root {
+  font-family: system-ui, sans-serif;
+  color: #1f2937;
+  background: #f3f4f6;
+}
+
+* { box-sizing: border-box; }
+
+body { margin: 0; }
+
+.page {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 2rem;
+}
+
+.card {
+  width: min(100%, 32rem);
+  padding: 2rem;
+  background: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 8px 30px rgb(0 0 0 / 10%);
+}
+
+form { display: grid; gap: 1rem; }
+
+label, input, textarea, button { display: block; width: 100%; }
+
+input, textarea, button { font: inherit; padding: 0.6rem; }
+
+textarea { min-height: 8rem; resize: vertical; }
+
+button {
+  border: 0;
+  border-radius: 0.4rem;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+}
