@@ -1,33 +1,67 @@
-// console.log("valid anagram brute force approach")
-// function validAnagram(string1,string2){
-//     let s1 = string1.split("").sort().join("")
-//     let s2 = string2.split("").sort().join("")
+/**
+ * Valid Anagram
+ *
+ * Question:
+ * Given two strings `s` and `t`, return `true` when `t` is an anagram of `s`.
+ * An anagram uses exactly the same characters with exactly the same counts.
+ *
+ * This file includes a brute-force sorting solution and an optimized
+ * frequency-counting solution. Use the optimized version in an interview.
+ */
 
-//     return s1 === s2
-// }
+/**
+ * Brute force: sort both strings and compare the sorted results.
+ *
+ * Time: O(n log n) because sorting n characters takes n log n time.
+ * We sort twice, but 2 * n log n is still O(n log n).
+ * Space: O(n) because split creates character arrays.
+ *
+ * @param {string} s
+ * @param {string} t
+ * @returns {boolean}
+ */
+function isAnagramBruteForce(s, t) {
+  if (s.length !== t.length) {
+    return false;
+  }
 
-
-console.log("valid anagram Optimizedd approach")
-
-function validAnagram(string1,string2){
- if(string1.length !== string2.length){
-    return false
- }
-    let count={}
-
-    for(let char of string1){
-        count[char] = (count[char] || 0) + 1;
-    }
-console.log(count)
-    for(let char of string2){
-        if(!count[char]){
-            return false
-        }
-        count[char]
-    }
-    return true
+  return s.split("").sort().join("") === t.split("").sort().join("");
 }
 
+/**
+ * Optimized: count each character in `s`, then subtract while reading `t`.
+ *
+ * Time: O(n) because we scan each string once: n + n = 2n, which is O(n).
+ * Each count lookup is O(1) on average.
+ * Space: O(k), where k is the number of different characters we store.
+ *
+ * @param {string} s
+ * @param {string} t
+ * @returns {boolean}
+ */
+function isAnagram(s, t) {
+  if (s.length !== t.length) {
+    return false;
+  }
 
+  const count = Object.create(null);
 
-console.log("valid anagram",validAnagram("anagram","nagaram"))
+  for (const char of s) {
+    count[char] = (count[char] || 0) + 1;
+  }
+
+  for (const char of t) {
+    if (!count[char]) {
+      return false;
+    }
+
+    count[char] -= 1;
+  }
+
+  return true;
+}
+
+// Keep the repository's original function name available as an alias.
+const validAnagram = isAnagram;
+
+module.exports = { isAnagram, isAnagramBruteForce, validAnagram };
