@@ -9,6 +9,10 @@
  *
  * n = total number of values in nums.
  * u = number of unique values in nums.
+ *
+ * How to test:
+ * Test file: tests/javascript/topKFrequentElements.test.js
+ * Run: node --test tests/javascript/topKFrequentElements.test.js
  */
 
 /**

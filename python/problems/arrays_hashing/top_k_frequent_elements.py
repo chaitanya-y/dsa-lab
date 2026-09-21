@@ -8,6 +8,10 @@ answer = [1, 2]
 
 n = total number of values in nums.
 u = number of unique values in nums.
+
+How to test:
+Test file: tests/python/test_top_k_frequent_elements.py
+Run: PYTHONDONTWRITEBYTECODE=1 python3 -m unittest -v tests/python/test_top_k_frequent_elements.py
 """
 
 

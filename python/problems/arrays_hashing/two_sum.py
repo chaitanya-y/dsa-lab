@@ -4,6 +4,10 @@ Question:
 Given an integer list ``nums`` and a target, return the indices of two
 numbers whose sum equals the target. Do not use the same element twice.
 Return an empty list when no pair exists.
+
+How to test:
+Test file: tests/python/test_two_sum.py
+Run: PYTHONDONTWRITEBYTECODE=1 python3 -m unittest -v tests/python/test_two_sum.py
 """
 
 

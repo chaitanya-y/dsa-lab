@@ -7,6 +7,10 @@
  *
  * This file includes a brute-force comparison and an optimized hash-set
  * solution. Use the hash-set version in an interview.
+ *
+ * How to test:
+ * Test file: tests/javascript/containsDuplicate.test.js
+ * Run: node --test tests/javascript/containsDuplicate.test.js
  */
 
 /**

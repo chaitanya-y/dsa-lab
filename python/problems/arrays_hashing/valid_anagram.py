@@ -6,6 +6,10 @@ of ``s``. An anagram uses the same characters with the same counts.
 
 This file includes a brute-force sorting solution and an optimized
 frequency-counting solution.
+
+How to test:
+Test file: tests/python/test_valid_anagram.py
+Run: PYTHONDONTWRITEBYTECODE=1 python3 -m unittest -v tests/python/test_valid_anagram.py
 """
 
 

@@ -9,6 +9,10 @@ solution that is appropriate for an interview submission.
 
 Python's ``set`` is similar to JavaScript's ``Set``: it stores unique values
 and makes membership checks such as ``num in seen`` fast.
+
+How to test:
+Test file: tests/python/test_contains_duplicate.py
+Run: PYTHONDONTWRITEBYTECODE=1 python3 -m unittest -v tests/python/test_contains_duplicate.py
 """
 
 

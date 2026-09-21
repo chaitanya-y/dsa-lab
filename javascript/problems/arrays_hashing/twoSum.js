@@ -5,6 +5,10 @@
  * Given an integer array `nums` and a target, return the indices of two
  * numbers whose sum equals the target. Do not use the same element twice.
  * Return [] when no pair exists.
+ *
+ * How to test:
+ * Test file: tests/javascript/twoSum.test.js
+ * Run: node --test tests/javascript/twoSum.test.js
  */
 
 /**

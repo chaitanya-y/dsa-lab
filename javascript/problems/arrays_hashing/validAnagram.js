@@ -7,6 +7,10 @@
  *
  * This file includes a brute-force sorting solution and an optimized
  * frequency-counting solution. Use the optimized version in an interview.
+ *
+ * How to test:
+ * Test file: tests/javascript/validAnagram.test.js
+ * Run: node --test tests/javascript/validAnagram.test.js
  */
 
 /**
