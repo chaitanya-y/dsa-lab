@@ -60,25 +60,6 @@ function mergeKListsBruteForce(lists) {
 }
 
 /**
- * Sequential merge: add each list to the result one at a time.
- * How this solution works:
- * 1. Start with an empty result list.
- * 2. Merge the next sorted input list with the result.
- * 3. Repeat until every input list has been included.
- * Complexity: O(N * k) time in the worst case and O(1) extra space, where k is
- * the number of lists and N is their total number of nodes.
- */
-function mergeKListsSequential(lists) {
-  let mergedHead = null; // The accumulated result starts empty.
-
-  for (const head of lists) { // Add each input list in order.
-    mergedHead = mergeTwoSortedLists(mergedHead, head); // Keep the result sorted after each merge.
-  }
-
-  return mergedHead; // Return the result after all lists have been added.
-}
-
-/**
  * Pairwise divide and conquer: merge neighboring lists in repeated rounds.
  * How this solution works:
  * 1. Pair neighboring list heads and merge each pair.
@@ -192,4 +173,4 @@ function mergeKLists(lists) {
   return dummy.next; // Return the merged head, or null when all input lists are empty.
 }
 
-module.exports = { mergeKLists, mergeKListsBruteForce, mergeKListsPairwise, mergeKListsSequential };
+module.exports = { mergeKLists, mergeKListsBruteForce, mergeKListsPairwise };

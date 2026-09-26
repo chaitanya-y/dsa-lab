@@ -54,12 +54,6 @@ class MergeKSortedListsTests(unittest.TestCase):
         result = merge(build_lists([[1, 4, 5], [1, 3, 4], [2, 6]]))
         self.assertEqual(list_values(result), [1, 1, 2, 3, 4, 4, 5, 6])
 
-    def test_sequential_solution_merges_one_list_at_a_time(self):
-        module = load_solution_module()
-        merge = get_callable(self, module, "merge_k_lists_sequential")
-        result = merge(build_lists([[1, 4, 5], [1, 3, 4], [2, 6]]))
-        self.assertEqual(list_values(result), [1, 1, 2, 3, 4, 4, 5, 6])
-
     def test_pairwise_solution_handles_an_odd_number_of_lists(self):
         module = load_solution_module()
         merge = get_callable(self, module, "merge_k_lists_pairwise")
@@ -78,7 +72,6 @@ class MergeKSortedListsTests(unittest.TestCase):
         module = load_solution_module()
         for name in (
             "merge_k_lists_brute_force",
-            "merge_k_lists_sequential",
             "merge_k_lists_pairwise",
         ):
             with self.subTest(solution=name):

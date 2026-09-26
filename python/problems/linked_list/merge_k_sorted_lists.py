@@ -72,26 +72,6 @@ def merge_k_lists_brute_force(lists: list[Optional[ListNode]]) -> Optional[ListN
     return nodes[0] if nodes else None  # Return the smallest node, or None.
 
 
-def merge_k_lists_sequential(lists: list[Optional[ListNode]]) -> Optional[ListNode]:
-    """Sequential merge: merge one new list into the result at a time.
-
-    How this solution works:
-    1. Start with an empty merged result.
-    2. Merge the next sorted list into the result using a two-list merge.
-    3. Continue until every input list has been included.
-
-    Complexity variables: k = number of lists; N = total number of nodes.
-    Time: O(N * k) in the worst case because nodes may be revisited for each list.
-    Extra space: O(1), excluding the input list of heads and returned links.
-    """
-    merged_head = None  # The result starts as an empty linked list.
-
-    for head in lists:  # Add the input lists one at a time.
-        merged_head = _merge_two_lists(merged_head, head)  # Keep the result sorted.
-
-    return merged_head  # Return the head after every list has been merged.
-
-
 def merge_k_lists_pairwise(lists: list[Optional[ListNode]]) -> Optional[ListNode]:
     """Pairwise merge: merge lists in rounds, as in a tournament.
 

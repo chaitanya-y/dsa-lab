@@ -47,12 +47,6 @@ test("Merge K Sorted Lists: flatten-and-sort approach merges all nodes", () => {
   assert.deepEqual(listValues(result), [1, 1, 2, 3, 4, 4, 5, 6]);
 });
 
-test("Merge K Sorted Lists: sequential approach merges each list", () => {
-  const merge = requireSolution("mergeKListsSequential");
-  const result = merge(buildLists([[1, 4, 5], [1, 3, 4], [2, 6]]));
-  assert.deepEqual(listValues(result), [1, 1, 2, 3, 4, 4, 5, 6]);
-});
-
 test("Merge K Sorted Lists: pairwise approach handles an odd number of lists", () => {
   const merge = requireSolution("mergeKListsPairwise");
   const result = merge(buildLists([[1, 4], [2, 3], [5, 7]]));
@@ -68,7 +62,6 @@ test("Merge K Sorted Lists: heap approach handles duplicate values", () => {
 test("Merge K Sorted Lists: all approaches handle no lists", () => {
   for (const name of [
     "mergeKListsBruteForce",
-    "mergeKListsSequential",
     "mergeKListsPairwise",
     "mergeKLists",
   ]) {
